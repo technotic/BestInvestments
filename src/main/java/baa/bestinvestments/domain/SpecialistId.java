@@ -3,11 +3,11 @@ package baa.bestinvestments.domain;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 
-public final class ClientId {
+public final class SpecialistId {
 
   private final String value;
 
-  public ClientId(String value) {
+  public SpecialistId(String value) {
     this.value = value;
   }
 
@@ -28,7 +28,7 @@ public final class ClientId {
 
     if (o == null || getClass() != o.getClass()) return false;
 
-    ClientId clientId = (ClientId) o;
+    SpecialistId clientId = (SpecialistId) o;
 
     return new EqualsBuilder()
       .append(value, clientId.value)

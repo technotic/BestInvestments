@@ -7,7 +7,7 @@ public final class ProjectManagerId {
 
   private final String value;
 
-  private ProjectManagerId(String value) {
+  public ProjectManagerId(String value) {
     this.value = value;
   }
 

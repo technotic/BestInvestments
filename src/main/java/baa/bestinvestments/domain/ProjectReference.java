@@ -3,12 +3,19 @@ package baa.bestinvestments.domain;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 
+import static org.apache.commons.lang3.RandomStringUtils.randomAlphabetic;
+import static org.apache.commons.lang3.RandomStringUtils.randomNumeric;
+
 public final class ProjectReference {
 
   private final String value;
 
   private ProjectReference(String value) {
     this.value = value;
+  }
+
+  public static ProjectReference generateReference() {
+    return new ProjectReference(randomAlphabetic(2) + randomNumeric(4));
   }
 
   public String getValue() {

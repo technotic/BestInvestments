@@ -1,12 +1,10 @@
 package baa.bestinvestments.domain;
 
-import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 import java.time.LocalDate;
 
 import static org.assertj.core.api.Assertions.assertThat;
-import static org.junit.jupiter.api.Assertions.*;
 
 class ProjectTest {
 
@@ -57,6 +55,7 @@ class ProjectTest {
     Project project = Project.draft(new ClientId("1234"), LocalDate.now(), "Test Project");
     project.start(new ProjectManagerId("1001"));
     project.addSpecialist(new SpecialistId("100"));
+    assertThat(project.approvedSpecialists()).isEmpty();
 
     // When
     project.approveSpecialist(new SpecialistId("100"));
